@@ -31,11 +31,11 @@ export default async function AnimeMainCharacters({animeMCId}: any) {
     const mainCharacter = 'Main'
     return (
         <div>
-            <H3>Main Cast:</H3>
+            <H3>Characters:</H3>
             <div className="flex flex-wrap gap-3 container justify-start justify-items-center items-center my-3">
-                {data.data.map((dat) => (
+                {data.data.map((dat, index) => (
                     <div key={dat.character.mal_id}>
-                        {(dat.role === mainCharacter) && (
+                        {(index < 10) && (
                             <>
                             <div className="w-[100px] h-[150px] relative">
                                 <Image
@@ -48,7 +48,7 @@ export default async function AnimeMainCharacters({animeMCId}: any) {
                             <div className=""><p className="text-xs text-indigo-300">{dat.character.name}</p></div>
                             </>
                         )}
-                        {!(dat.role === mainCharacter) && (
+                        {!(index < 10) && (
                             <>
                             </>
                         )}  

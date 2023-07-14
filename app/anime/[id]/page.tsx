@@ -1,4 +1,4 @@
-import { H1, P } from "@/components/Typography";
+import { H1, H4, P } from "@/components/Typography";
 import Image from "next/image";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
 import AnimeThemes from "./(components)/animeThemes";
@@ -56,11 +56,20 @@ type Repository = {
         score: number,
         scored_by: number,
         rank: number,
-        popularity: number
+        popularity: number,
+        type: string,
+        source: string,
+        episodes: number,
+        status: string,
+        aired: {
+            string: string
+        },
+        duration: string,
+        rating: string
     }
 }
 
-export default async function AnimeWithId({ params }: any) {
+export default async function Page({ params }: any) {
     const res = await fetch(`https://api.jikan.moe/v4/anime/${params.id}`);
     if (!res.ok) throw new Error('failed to fetch data')
 
@@ -98,23 +107,53 @@ export default async function AnimeWithId({ params }: any) {
                 height={300}
                 className="object-scale-down rounded-xl mt-2 aspect-auto"
                 />
-                <div className="ml-4 mt-2 flex gap-5">
+                <div className="ml-4 mt-2">
+                    <div className="flex gap-5">
                     <div className=" flex flex-col justify-items-center items-center w-30 flex-grow">
-                        <P className="font-bold bg-indigo-400 text-black rounded-md px-3">Score</P>
+                        <P className="font-bold bg-purple-400 text-black rounded-md px-3">Score</P>
                         <h2 className="scroll-m-20 text-3xl font-bold">{data.data.score ? data.data.score.toFixed(2) : 'N/A'}</h2>
                         <p className=" text-xs">{data.data.scored_by ? data.data.scored_by + ' users' : 'no user'}</p>
                     </div>
-                    <div className="flex flex-col ml-4 flex-grow text-indigo-300">
+                    <div className="flex flex-col ml-4 flex-grow text-purple-300">
                         <div>
                             <P className="text-xs mt-3">Ranked: </P>
                             <h2 className="scroll-m-20 text-3xl font-semibold text-white">{data.data.rank ? '#' + data.data.rank : 'N/A'}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col flex-grow text-indigo-300">
+                    <div className="flex flex-col flex-grow text-purple-300">
                         <div>
                             <P className="text-xs mt-3">Popularity: </P>
                             <h2 className="scroll-m-20 text-3xl font-semibold text-white">{data.data.popularity ? '#' + data.data.popularity : 'N/A'}</h2>
                         </div>
+                    </div>
+                    </div>
+                    <div className="my-5 text-sm">
+                        <ul>
+                            <li>
+                                <span className="text-purple-300">Type: </span>
+                                <span>{data.data.type}</span>
+                            </li>
+                            <li>
+                                <span className="text-purple-300">Source: </span>
+                                <span>{data.data.source}</span>
+                            </li>
+                            <li>
+                                <span className="text-purple-300">Episodes: </span>
+                                <span>{data.data.episodes}</span>
+                            </li>
+                            <li>
+                                <span className="text-purple-300">Aired: </span>
+                                <span>{data.data.aired.string}</span>
+                            </li>
+                            <li>
+                                <span className="text-purple-300">Duration: </span>
+                                <span>{data.data.duration}</span>
+                            </li>
+                            <li>
+                                <span className="text-purple-300">Rating: </span>
+                                <span>{data.data.rating}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="mt-2 mx-auto">
@@ -129,7 +168,6 @@ export default async function AnimeWithId({ params }: any) {
             <AnimeMainCharacters animeMCId={params.id}/>
             <Button asChild><Link href={`${params.id}/characters`}>View more characters</Link></Button>
         </div>
-        
         </div>
     )
 }
