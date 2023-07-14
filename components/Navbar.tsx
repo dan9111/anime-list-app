@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { H3 } from "./Typography";
 import { Input } from "./ui/input";
+import SearchInput from "@/app/animelist/(components)/SearchList";
 
 const Navbar = () => {
   return (
@@ -10,8 +11,8 @@ const Navbar = () => {
       </div>
       <div className="flex-auto w-64 justify-end gap-4 items-center">
       </div>
-      <div className="flex-auto flex-row w-2 gap-4 items-center my-auto mr-2">
-          <Input type="search" placeholder="Search an Anime" className="bg-gray-800 border-slate-500 focus-visible:ring-slate-500"/>
+      <div className="flex-auto flex-row w-2 gap-4 items-center -mt-3 mr-2">
+          <SearchInput/>
       </div>
     </div>
   );
