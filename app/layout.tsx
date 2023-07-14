@@ -20,6 +20,7 @@ export default function RootLayout({
       <body className={inter.className + ' bg-slate-800'}>
         <Navbar/>
         {children}
+        <div className='h-full'></div>
         </body>
     </html>
   )

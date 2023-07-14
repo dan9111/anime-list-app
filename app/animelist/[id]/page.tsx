@@ -61,13 +61,13 @@ export default async function Page({ params }: any) {
                                 height={200}
                                 className="object-scale-down rounded-xl "
                             />
-                            <div className="flex flex-col mx-8">
+                            <div className="flex flex-col mx-8 w-[1000px] flex-auto">
                                 <H3>{dat.title_english ? dat.title_english : dat.title}</H3>
                                 <H4 className="text-sm">JP: {dat.title_japanese}</H4>
                                 <P className="text-sm">Status: {dat.status}</P>
                             </div>
                             <div/>
-                            <div className="flex flex-col w-full">
+                            <div className="flex flex-col w-full pl-4 overflow-auto bg-indigo-600/10 p-2 rounded-md">
                                 <H4 className="text-md">Details</H4>
                                 <div className="flex text-xs">
                                     <p className="mr-2">Genre:</p>
@@ -77,10 +77,10 @@ export default async function Page({ params }: any) {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex">
+                                <div className="grid grid-cols-4">
                                 {dat.studios.map((studio, index) => (
                                     <span key={index}>
-                                    <p>{(index ? ', ' : '') + studio.name}</p>                                  
+                                    <p>{(index ? ' ' : '') + studio.name}</p>                                  
                                     </span>
                                 )) }
                                 </div>
