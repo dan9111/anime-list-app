@@ -34,7 +34,7 @@ export default async function AnimeWithId({ params }: any) {
             alt={data.data.title}
             width={200}
             height={300}
-            className="rounded-xl mt-2"
+            className="rounded-xl mt-2 aspect-auto"
             />
             <div className="text-white flex-shrink my-2 w-50">
             <P>{data.data.synopsis ?? noSynopsis}</P>
