@@ -3,8 +3,17 @@
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { BiSearch } from "react-icons/bi";
 
-const SearchInput = () => {
+interface SearchInputProps {
+    className?: string;
+    placeholder?: string;
+    buttonClassName?: string;
+}
+
+const SearchInput: React.FC<SearchInputProps> = ({ className, placeholder, buttonClassName }) => {
     const [searchQuery, setSearchQuery] = useState("")
     const router = useRouter();
 
@@ -25,9 +34,12 @@ const SearchInput = () => {
         value={searchQuery}
         onChange={event => setSearchQuery(event.target.value)}
         type="search" 
-        placeholder="Search an Anime" 
-        className="bg-gray-800 border-slate-500 focus-visible:ring-slate-500 text-white my-4">
+        placeholder={placeholder} 
+        className={cn("bg-gray-800 border-slate-500 focus-visible:ring-slate-500 text-white rounded-none rounded-l-xl", className)}>
         </Input>
+        <Button onClick={onSearch} className={cn("bg-slate-500 hover:bg-slate-700 rounded-none rounded-r-xl", buttonClassName)}>
+            <BiSearch size={25}/>
+        </Button>
         </form>
      );
 }

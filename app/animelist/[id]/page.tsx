@@ -85,7 +85,7 @@ export default async function Page({ params }: any) {
                                 )) }
                                 </div>
                                 <div className="bg-zinc-900/60 w-16 p-1 flex-l h-8 my-0.5 rounded-md flex justify-center items-center">
-                                    <H3>{dat.score ? dat.score : 'N/A'}</H3>
+                                    <H3>{dat.score ? dat.score.toFixed(2) : 'N/A'}</H3>
                                 </div>
                                 <p className="text-sm">{dat.favorites ? dat.favorites + ' favorites' : ''}</p>
                             </div>    
