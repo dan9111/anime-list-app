@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+This project is still under development
+## Introduction
+
+Current pages (prone to change)
+
+-Home
+![image](https://github.com/dan9111/anime-list-app/assets/138840109/52691978-3112-4da2-bed9-2373b61e21cd)
+
+-Search
+![image](https://github.com/dan9111/anime-list-app/assets/138840109/9188004a-614f-4164-bc93-2fbd9592ce2b)
+
+-Anime Information
+![image](https://github.com/dan9111/anime-list-app/assets/138840109/0ce23598-2e17-49e7-93ee-dd9e53f90dfd)
+
+-Character list
+![image](https://github.com/dan9111/anime-list-app/assets/138840109/625afcbb-2a8c-4bff-9a79-9a6cb6027628)
+
+
 ## Getting Started
 
 First, run the development server:
