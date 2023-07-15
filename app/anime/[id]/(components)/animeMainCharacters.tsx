@@ -1,5 +1,6 @@
 import { H3 } from "@/components/Typography"
 import Image from "next/image"
+import Link from "next/link";
 
 type Repository = {
     data: [{
@@ -38,12 +39,14 @@ export default async function AnimeMainCharacters({animeMCId}: any) {
                         {(index < 10) && (
                             <>
                             <div className="w-[100px] h-[150px] relative">
-                                <Image
-                                src={dat.character.images.jpg.image_url}
-                                alt={dat.character.name}
-                                fill
-                                className="rounded-lg"
-                                />
+                                <Link href={`/character/${dat.character.mal_id}`}>
+                                    <Image
+                                    src={dat.character.images.jpg.image_url}
+                                    alt={dat.character.name}
+                                    fill
+                                    className="rounded-lg"
+                                    />
+                                </Link>
                             </div>
                             <div className=""><p className="text-xs text-indigo-300">{dat.character.name}</p></div>
                             </>

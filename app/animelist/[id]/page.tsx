@@ -37,7 +37,7 @@ type Repository = {
 }
 
 export default async function Page({ params }: any) {
-    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${params.id}&sfw`);
+    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${params.id}&sfw&order_by=popularity`);
     if (!res.ok) throw new Error('failed to fetch data')
 
     const data: Repository = await res.json();

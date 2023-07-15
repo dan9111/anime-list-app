@@ -6,6 +6,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import AnimeMainCharacters from "./(components)/animeMainCharacters";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
  
 type Props = {
   params: { id: string }

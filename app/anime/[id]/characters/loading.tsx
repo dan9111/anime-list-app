@@ -5,7 +5,7 @@ const Loading = () => {
     const listSkeleton = [0, 1, 2, 3, 4]
 
     return ( <>
-        <div className='flex flex-col h-full justify-center bg-gray-700/40 bg-gradient-to-b from-purple-950/40 mx-2 mb-2 rounded-xl'>
+        <div className='flex flex-col h-full justify-center bg-gray-700/40 bg-gradient-to-b from-indigo-950/40 mx-2 mb-2 rounded-xl'>
             <div className="mx-20 my-5 gap-4 flex flex-col">
                 <Skeleton className="bg-gray-700/60 h-[20px] w-[300px] mb-8"/> {/*anime results */}
                 {listSkeleton.map((index) => (
