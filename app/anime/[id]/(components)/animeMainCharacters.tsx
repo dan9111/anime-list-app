@@ -26,8 +26,14 @@ type Repository = {
 
 export default async function AnimeMainCharacters({animeMCId}: any) {
     const res = await fetch(`https://api.jikan.moe/v4/anime/${animeMCId}/characters`);
-    if (!res.ok) throw new Error('failed to fetch data')
-
+    if (!res.ok) {
+        return (
+            <>
+                <H3>Characters:</H3>
+                <p>Failed to fetch characters, please refresh the page</p>
+            </>
+        )
+    }
     const data: Repository = await res.json();
     const mainCharacter = 'Main'
     return (

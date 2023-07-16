@@ -25,7 +25,11 @@ type Repository = {
 export default async function animeThemes({animeId, animeName}: any) {
 
     const res = await fetch(`https://api.jikan.moe/v4/anime/${animeId}/themes`);
-    if (!res.ok) throw new Error('failed to fetch data')
+    if (!res.ok) {
+        return (
+            <p>Fail to fetch themes, please refresh the page</p>
+        )
+    }
 
     const data: Repository = await res.json();
 
