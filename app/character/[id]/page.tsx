@@ -84,8 +84,8 @@ export default async function Page({params}:any) {
                         <H4>Anime:</H4>
                         <div className="flex flex-col gap-2 overflow-y-auto h-[700px] scrollbar-thin scrollbar-thumb-purple-500">
                         {data.data.anime.map((dat) => (
-                            <Link href={`/anime/${dat.anime.mal_id}`} className="w-fit">
-                            <div key={dat.anime.mal_id} className="drop-shadow-lg flex bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">
+                            <Link key={dat.anime.mal_id} href={`/anime/${dat.anime.mal_id}`} className="w-fit">
+                            <div className="drop-shadow-lg flex bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">
                                 <div className="w-[60px] h-[90px] relative">
                                     <Image src={dat.anime.images.jpg.image_url} alt={dat.anime.title} fill className="object-scale-down rounded-lg"/>
                                 </div>

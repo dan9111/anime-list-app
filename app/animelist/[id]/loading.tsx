@@ -10,6 +10,7 @@ const Loading = () => {
                 <Skeleton className="bg-gray-700/60 h-[20px] w-[300px] mb-8"/> {/*anime results */}
                 {listSkeleton.map((index) => (
                     (index < listSkeleton.length) ? 
+                <div key={index}>
                 <Skeleton className="bg-gray-700/60 h-[160px] w-full flex gap-4 p-3">
                     <Skeleton className="bg-gray-700/80 h-[140px] w-[200px] mb-8"/>
                     <div className="flex flex-col gap-2 w-[1000px] flex-auto">
@@ -24,6 +25,7 @@ const Loading = () => {
                         <Skeleton className="bg-gray-700/80 h-[15px] w-[100px]"/>
                     </div>
                 </Skeleton> 
+                </div>
                 : null
                 ))}
             </div>
