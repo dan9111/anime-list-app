@@ -28,7 +28,7 @@ const VoiceActors: React.FC<VoiceActorsProps> = ({seiyuu}) => {
                     src={voice.person.images.jpg.image_url}
                     alt={voice.person.name}
                     fill
-                    className="rounded-lg object-scale-down"
+                    className="md:object-scale-down rounded-lg"
                     />
                 </Link>
                 </div>

@@ -47,7 +47,7 @@ export default async function AiringNow() {
                         src={dat.images.jpg.image_url}
                         alt={dat.title}
                         fill
-                        className="rounded-lg object-scale-down"
+                        className="rounded-lg md:object-scale-down"
                         />
                         </Link>
                         </div>

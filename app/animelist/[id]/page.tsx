@@ -59,10 +59,10 @@ export default async function Page({ params }: any) {
                                 alt={dat.title}
                                 width={100}
                                 height={200}
-                                className="object-scale-down rounded-xl "
+                                className="md:object-scale-down rounded-xl "
                             />
                             <div className="flex flex-col mx-8 md:w-[1000px] flex-auto">
-                                <H3 className="text-md md:text-base">{dat.title_english ? dat.title_english : dat.title}</H3>
+                                <H3 className="text-md md:text-2xl">{dat.title_english ? dat.title_english : dat.title}</H3>
                                 <H4 className="text-xs md:text-sm">JP: {dat.title_japanese}</H4>
                                 <p className="text-xs mt-2 md:text-sm md:mt-7">Status: {dat.status}</p>
                             </div>
