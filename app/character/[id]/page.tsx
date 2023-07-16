@@ -72,7 +72,7 @@ export default async function Page({params}:any) {
                 <H2 className="border-b-0">{data.data.name}</H2>
             </div>
             <H4 className="text-md">{data.data.name_kanji}</H4>
-            <div className="text-sm text-indigo-300 mb-4">
+            <div className="text-sm text-indigo-300 my-2 w-100">
                 {(data.data.nicknames[0] == null) ? '' : 
                 <>
                     <span>Alias: </span>
@@ -83,19 +83,21 @@ export default async function Page({params}:any) {
                 }
                 
             </div>  
-            <div className="flex">
-                <div>
+            <div className="md:flex">
+                <div className="">
+                    <div className=" flex justify-center">
                     <Image 
                     src={data.data.images.jpg.image_url}
                     alt={data.data.name}
                     width={200}
                     height={300}
-                    className="object-scale-down rounded-xl mt-2 aspect-auto flex-none bg-white"
+                    className="md:object-scale-down rounded-xl mt-2 aspect-auto flex-none"
                     /> 
-                    <div className="flex flex-col my-2"> {/*Anime*/}
+                    </div>
+                    <div className="flex flex-col my-2 justify-center"> {/*Anime*/}
                     
                         <H4>Anime:</H4>
-                        <div className="flex flex-col gap-2 overflow-y-auto h-[700px] scrollbar-thin scrollbar-thumb-purple-500">
+                        <div className="flex flex-col gap-2 overflow-y-auto h-[500px] md:h-[700px] scrollbar-thin scrollbar-thumb-purple-500">
                         {data.data.anime.map((dat) => (
                             <Link key={dat.anime.mal_id} href={`/anime/${dat.anime.mal_id}`} className="w-fit">
                             <div className="drop-shadow-lg flex bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">

@@ -19,7 +19,7 @@ interface VoiceActorsProps {
 
 const VoiceActors: React.FC<VoiceActorsProps> = ({seiyuu}) => {
     return (
-    <div className="flex gap-4 overflow-x-auto w-[1100px] h-fit scrollbar-thin">
+    <div className="flex gap-4 overflow-x-auto md:w-[1100px] h-fit scrollbar-thin">
         {seiyuu?.map((voice) => (
             <div key={voice.person.mal_id} className="drop-shadow-lg bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">
                 <div className="w-[100px] h-[150px] relative rounded-lg bg-black bg-gradient-to-b from-indigo-950/60">
@@ -28,7 +28,7 @@ const VoiceActors: React.FC<VoiceActorsProps> = ({seiyuu}) => {
                     src={voice.person.images.jpg.image_url}
                     alt={voice.person.name}
                     fill
-                    className="rounded-lg object-scale-down"
+                    className="md:object-scale-down rounded-lg"
                     />
                 </Link>
                 </div>

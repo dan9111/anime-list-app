@@ -9,8 +9,8 @@ export default function Home() {
   const wallpapers = ['https://cdn.myanimelist.net/images/anime/1168/128144l.jpg', 'https://cdn.myanimelist.net/images/anime/1460/119974l.jpg', 'https://cdn.myanimelist.net/images/anime/5/79183l.jpg']
 
   return (
-    <main className='h-screen text-slate-200 '>
-            <section className="absolute w-full left-0 top-0 bottom-0 p-0 h-screen -z-50 opacity-40" id="hero-background">
+    <main className='h-screen overflow-hidden text-slate-200 '>
+            <section className="absolute w-full left-0 top-0 bottom-0 p-0 h-screen overflow-hidden -z-50 opacity-40" id="hero-background">
                 <div className='md:flex h-screen'>
                   {wallpapers.map((wallpaper, index) => (
                     <Image

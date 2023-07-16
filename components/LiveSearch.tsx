@@ -70,6 +70,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ className, placeholder, butto
                     {<BiSearch size={25} className="-mx-2"/>} 
                 </Button>
             </form>
+            {/*Mobile Nav*/}
             <div className="flex flex-auto md:hidden justify-end">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
