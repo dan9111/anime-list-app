@@ -22,6 +22,21 @@ type Repository = {
             },
         role: string,
         favorites: number,
+        voice_actors: [
+            {
+            person: {
+                mal_id: number,
+                url: string,
+                images: {
+                    jpg: {
+                        image_url: string
+                    }
+                },
+                name: string
+            },
+            language: string
+            }
+            ]
     }]
 }
 
@@ -55,6 +70,29 @@ export default async function Page({params, animeName}: any) {
                         <H3>{dat.character.name}</H3>
                         <H4 className="text-sm text-purple-300">{dat.role}</H4>
                         <P className="text-sm text-purple-300">{dat.favorites + ((dat.favorites == 1) ? ' favorite' : ' favorites') }</P>
+                        </div>
+                        <div className="flex gap-3 w-full pl-4 overflow-auto justify-end rounded-md">
+                        {dat.voice_actors.map(voice => (
+                            (voice.language === 'Japanese') ? 
+                            <div className="flex gap-6">
+                                <div className='text-right'>
+                                    <H4>{voice.person.name}</H4>
+                                    <p className="text-purple-300">{voice.language}</p>
+                                </div>
+                                <Link href={`/people/${voice.person.mal_id}`}>
+                                <Image
+                                src={voice.person.images.jpg.image_url}
+                                alt={voice.person.name}
+                                width={100}
+                                height={200}
+                                className="object-scale-down rounded-xl "
+                                />
+                                </Link>
+                            </div>
+                            
+                            : <></>
+                        ))}
+                        
                         </div>
                     </div>
                     </Link>

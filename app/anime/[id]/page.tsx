@@ -6,6 +6,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import AnimeMainCharacters from "./(components)/animeMainCharacters";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import {BiLinkExternal} from 'react-icons/bi'
 
  
 type Props = {
@@ -165,6 +166,13 @@ export default async function Page({ params }: any) {
             </div>
             <div className="text-white flex-shrink my-2 w-50">
                 <P>{data.data.synopsis ?? noSynopsis}</P>
+                <Button asChild className="w-[200px] bg-slate-950 bg-gradient-to-b from-indigo-950/30 flex flex-auto">
+                    <Link href={data.data.url}>
+                        <BiLinkExternal className="mr-2"/>
+                        <span>Open in MyAnimeList</span>
+                    </Link>
+                </Button>
+                
             </div>
             <AnimeMainCharacters animeMCId={params.id}/>
             <Button asChild><Link href={`${params.id}/characters`}>View more characters</Link></Button>

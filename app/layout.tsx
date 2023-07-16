@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn('bg-black w-full overflow-x-hidden scrollbar-thumb-purple-500 scrollbar-track-slate-900 scrollbar-thin', inter.className)}>
+      <body className={cn('bg-black w-full overflow-x-hidden overflow-y-auto scrollbar-thumb-purple-500 scrollbar-track-slate-900 scrollbar-thin scrollbar-thumb-rounded-sm', inter.className)}>
         <Navbar/>
         {children}
         <div className='h-full'></div>
