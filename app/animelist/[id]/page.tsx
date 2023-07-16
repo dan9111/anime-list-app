@@ -49,7 +49,7 @@ export default async function Page({ params }: any) {
     return (
         <>
             <div className='flex flex-col h-full justify-center bg-gray-700/40 bg-gradient-to-b from-purple-950/40 mx-2 mb-2 rounded-xl'>
-                <P className="text-white mx-20 my-5">Showing {searchTotal} anime results from: "{searchQueryString}"</P>
+                <P className="text-white mx-20 my-5">Showing {searchTotal} anime results from: {`"`+searchQueryString+`"`}</P>
                 <div className="mx-5 md:mx-20 my-5 gap-4 flex flex-col">
                     {data.data.map((dat) => (
                     <Link className="text-white" key={dat.mal_id} href={`/anime/${dat.mal_id}`}>
