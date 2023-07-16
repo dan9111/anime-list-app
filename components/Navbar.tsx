@@ -13,7 +13,7 @@ export default async function Navbar() {
       </div>
       <div className="flex-auto w-[500px] justify-end gap-4 items-center">
       </div>
-      <div className="flex flex-none w-[500px] gap-1 items-center mr-2">
+      <div className="flex w-[500px] gap-1 items-center mr-2">
         <SearchInput placeholder="Search">
           <SearchNav/>
         </SearchInput>

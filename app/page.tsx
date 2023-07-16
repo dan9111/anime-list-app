@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className='h-screen text-slate-200 '>
             <section className="absolute w-full left-0 top-0 bottom-0 p-0 h-screen -z-50 opacity-40" id="hero-background">
-                <div className='flex h-screen'>
+                <div className='md:flex h-screen'>
                   {wallpapers.map((wallpaper, index) => (
                     <Image
                     key={index}
