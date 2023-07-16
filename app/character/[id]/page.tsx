@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VoiceActors from "./(components)/VoiceActors";
 import BackButton from "@/components/BackButton";
+import type { Metadata } from "next";
 
 type Repository = {
     data: {
@@ -43,6 +44,18 @@ type Repository = {
                 name: string
             }
         }]
+    }
+}
+
+export async function generateMetadata({params }: any): Promise<Metadata> {
+    const res = await fetch(`https://api.jikan.moe/v4/characters/${params.id}/full`);
+    if (!res.ok) throw new Error('failed to fetch data')
+
+    const data: Repository = await res.json();
+
+    return {
+        title: data.data.name,
+        description: data.data.name_kanji
     }
 }
 

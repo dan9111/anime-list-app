@@ -2,37 +2,11 @@ import { H1, H4, P } from "@/components/Typography";
 import Image from "next/image";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
 import AnimeThemes from "./(components)/animeThemes";
-import { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import AnimeMainCharacters from "./(components)/animeMainCharacters";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {BiLinkExternal} from 'react-icons/bi'
-
- 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
- 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const id = params.id
- 
-  // fetch data
-  const product = await fetch(`https://api.jikan.moe/v4/anime/${id}`).then((res) => res.json())
-    
-  if (!product.data.title_english) {
-    return {
-        title: product.data.title,
-    }
-  }
-  return {
-    title: product.data.title_english,
-  }
-}
 
 type Repository = {  
     data: {
@@ -68,6 +42,18 @@ type Repository = {
         },
         duration: string,
         rating: string
+    }
+}
+
+export async function generateMetadata({params }: any): Promise<Metadata> {
+    const res = await fetch(`https://api.jikan.moe/v4/anime/${params.id}`);
+    if (!res.ok) throw new Error('failed to fetch data')
+
+    const data: Repository = await res.json();
+
+    return {
+        title: data.data.title,
+        description: data.data.status
     }
 }
 
