@@ -1,6 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 This project is still under development
+link for the website: https://theanimedatabase.netlify.app/
 ## Introduction
 
 Current pages (prone to change)
