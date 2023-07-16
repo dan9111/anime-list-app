@@ -87,7 +87,8 @@ export default async function Page({ params }: any) {
             <div className="text-white ml-5 flex flex-col h-full justify-center bg-gray-900/60 bg-gradient-to-b from-indigo-950/60 mx-4 mt-3 rounded-xl p-5">
             <H1>{data.data.title_english ? data.data.title_english : data.data.title}</H1>
             <p className="my-2 w-100">JP: {data.data.title_japanese}</p>
-            <div className="flex">
+            <div className="md:flex">
+                <div className=" flex justify-center">
                 <Image
                 src={data.data.images.jpg.large_image_url}
                 alt={data.data.title}
@@ -95,7 +96,8 @@ export default async function Page({ params }: any) {
                 height={300}
                 className="object-scale-down rounded-xl mt-2 aspect-auto"
                 />
-                <div className="ml-4 mt-2">
+                </div>
+                <div className="md:ml-4 mt-2">
                     <div className="flex gap-5">
                     <div className=" flex flex-col justify-items-center items-center w-30 flex-grow">
                         <P className="font-bold bg-purple-400 text-black rounded-md px-3">Score</P>

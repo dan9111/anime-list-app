@@ -37,7 +37,7 @@ export default async function AiringNow() {
     return (
         <div>
             <H4>Current Season:</H4>
-            <div className="flex gap-4 overflow-x-auto w-[1200px] flex-shrink h-fit scrollbar-thin mt-2">
+            <div className="flex gap-4 overflow-x-auto md:w-[1200px] flex-shrink h-fit scrollbar-thin mt-2">
                 {data.data.map((dat) => (
                     <div key={dat.mal_id} className="drop-shadow-lg bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">
                         <Suspense fallback='Loading'>

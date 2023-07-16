@@ -83,8 +83,8 @@ export default async function Page({params}:any) {
                 }
                 
             </div>  
-            <div className="flex">
-                <div>
+            <div className="md:flex">
+                <div className="">
                     <Image 
                     src={data.data.images.jpg.image_url}
                     alt={data.data.name}
@@ -95,7 +95,7 @@ export default async function Page({params}:any) {
                     <div className="flex flex-col my-2"> {/*Anime*/}
                     
                         <H4>Anime:</H4>
-                        <div className="flex flex-col gap-2 overflow-y-auto h-[700px] scrollbar-thin scrollbar-thumb-purple-500">
+                        <div className="flex flex-col gap-2 overflow-y-auto h-[500px] md:h-[700px] scrollbar-thin scrollbar-thumb-purple-500">
                         {data.data.anime.map((dat) => (
                             <Link key={dat.anime.mal_id} href={`/anime/${dat.anime.mal_id}`} className="w-fit">
                             <div className="drop-shadow-lg flex bg-slate-600/40 gap-3 rounded-lg bg-gradient-to-b from-indigo-700/10 w-fit p-2">
